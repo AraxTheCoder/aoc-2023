@@ -1,5 +1,5 @@
 <?php
-    // Thread cards as a base 13 number
+    // Treat cards as a base 13 number
     $hierarchy = [
         "A" => 12,
         "K" => 11,
