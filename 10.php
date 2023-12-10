@@ -159,22 +159,22 @@
                 continue;
             }
 
-            $outside_right = true;
-            $outside_left = true;
+            $insideRight = false;
+            $insideLeft = false;
 
             for($a = 0; $a < $lineIndex; $a++){
                 $partOfLoop = $loopMap[$a][$pipeIndex] == 1;
 
                 if ($partOfLoop&& in_array($map[$a][$pipeIndex], ["-", "L", "F"])){
-                    $outside_right = !$outside_right;
+                    $insideRight = !$insideRight;
                 }
 
                 if ($partOfLoop && in_array($map[$a][$pipeIndex], ["-", "7", "J"])){
-                    $outside_left = !$outside_left;
+                    $insideLeft = !$insideLeft;
                 }
             }
                 
-            if(!($outside_right || $outside_left)){
+            if($insideRight &&  $insideLeft){
                 $area++;
             }
         }
